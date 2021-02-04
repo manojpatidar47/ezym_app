@@ -56,6 +56,7 @@ class SignupActivity : AppCompatActivity(), View.OnClickListener {
         activitySignupBinding.llGoogle.setOnClickListener (this)
         activitySignupBinding.llFb.setOnClickListener (this)
         activitySignupBinding.tvDont.setOnClickListener (this)
+        //
     }
   /*  private fun fbLogin() {
         callbackManager = CallbackManager.Factory.create()
