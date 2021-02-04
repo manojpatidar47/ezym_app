@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">WeddGRings</string>
+    <!--Login-->
+    <string name="hello">Hello!</string>
+    <string name="welcomback">Welcome Back</string>
+    <string name="phonenumberoremail">Phone Number or Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgotpassword">Forgot password</string>
+    <string name="donthavemail">Don\'t have an account? Sign up</string>
+    <string name="or">OR</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="error">Error Saving File</string>
+
+    <!--Signup-->
+    <string name="create">Create</string>
+    <string name="newaccount">New Account</string>
+    <string name="name">Name</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="signup">Sign Up</string>
+    <string name="alreadyhaveaccount">Already have account?Login</string>
+    <!--Dialog_camara-->
+    <string name="Chooseprofiephoto">Choose Profile Photo</string>
+    <string name="takefromcamara">Take From Camera</string>
+    <string name="Choosefromgallary">Choose From Gallery</string>
+
+    <string name="bookspending">Books<b>"pending"</b> for return</string>
+    <string name="headquarters">"<b>"Headquarters:"</b>" Mooresville, North Carolina, U.S.</string>
+    <string name="SENDER_ID">574301617785</string>
+    <string name="notifications_admin_channel_name">Esyloop</string>
+    <string name="notifications_admin_channel_description">Esyloop Firebase PushNotification</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

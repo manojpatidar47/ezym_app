@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmner_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/backgorund_login"
+        tools:context=".UserDetailFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/nested"
+            android:background="#52000000"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/iv_profile_img"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/text_grey"
+                    android:elevation="@dimen/_10sdp"
+                    android:src="@drawable/ring_icon"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.9"></ImageView>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_percent="0.25"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.widget.Guideline>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="220dp"
+                    android:background="#54030607"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.95">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.3">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_55sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Name"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/_25sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:background="@color/text_grey"
+
+                            android:visibility="gone"></View>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Email:-"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_eamil"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Date of Birth:-"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_dob"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Gender:-"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_gender"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Height:-"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_height"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Relationship \nstatus"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_relationship"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="city"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="State"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Country"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Occupation"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_occupation"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Profile"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_profile"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Zodiac"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_zodiac"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Religion"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_religion"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Caste"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/caste"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Mother \nTongue"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/mother_tongue"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Blood Group"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/blood_gruop"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Family status"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/family_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="No. of family\n member"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/noofmember"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Physical Status"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_physical_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Complexion"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_complexion"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Eating Habit"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_eating"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Drinking Habit"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_drinking"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Smoking Habit"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_smoking"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Highest \n Qualification"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_qualification"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Annual Income"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_annual"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Hobies"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_hobies"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:gravity="center"
+                                android:text="Interest"
+                                android:textColor="@color/white"></TextView>
+
+                            <TextView
+                                android:id="@+id/tv_interest"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/background_white_stoke_rounded_less"
+                                android:gravity="center"
+                                android:textColor="@color/white"></TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/rl_request"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/background_lightblue_rounded"
+                            android:elevation="@dimen/_3sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/opensansregular"
+                                android:text="Connect"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/nrmltextsize"></TextView>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="7dp"
+                                android:padding="2dp"
+                                android:rotation="180"
+                                android:src="@drawable/backarr"></ImageView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</layout>

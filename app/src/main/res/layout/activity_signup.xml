@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<ScrollView
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+
+    android:fitsSystemWindows="true"
+    android:background="@drawable/backgorund_login"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cl_main"
+        android:background="#99000000"
+
+        tools:context=".ui.activity.LoginActivity">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_hello"
+            android:fontFamily="@font/aizonia_regular"
+            android:text="WeddGRings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_21sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:visibility="visible"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/opensansbold"
+            android:text="@string/create"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo"></TextView>
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/opensansbold"
+            android:text="@string/newaccount"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hello">
+
+        </TextView>
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_white_full_rounded"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/opensansregular"
+            android:hint="@string/name"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+            app:layout_constraintWidth_percent="0.8"></EditText>
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_white_full_rounded"
+            android:drawableLeft="@drawable/mail_icon"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/opensansregular"
+            android:hint="Email"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name"
+            app:layout_constraintWidth_percent="0.8"></EditText>
+        <EditText
+            android:id="@+id/et_phonenumber"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_white_full_rounded"
+            android:drawableLeft="@drawable/phone"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/opensansregular"
+            android:hint="@string/phonenumber"
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_email"
+            app:layout_constraintWidth_percent="0.8"></EditText>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_white_full_rounded"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/opensansregular"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_phonenumber"
+            app:layout_constraintWidth_percent="0.8"></EditText>
+        <TextView
+            android:id="@+id/tv_referl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Please enter your referral code, if you have any -"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/et_password"></TextView>
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_white_full_rounded"
+            android:fontFamily="@font/opensansregular"
+            android:hint="Code -"
+            android:visibility="gone"
+            android:inputType="text"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingLeft="15dp"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_referl"></EditText>
+
+        <LinearLayout
+            android:id="@+id/ll_signup"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_white_stoke_rounded"
+            android:fontFamily="@font/opensansregular"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_code"
+            app:layout_constraintWidth_percent="0.8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/signup"
+                android:textColor="@color/white"
+                android:textSize="@dimen/nrmltextsize"></TextView>
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_dont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/opensansregular"
+            android:text="@string/alreadyhaveaccount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/nrmltextsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_signup"></TextView>
+
+        <LinearLayout
+            android:id="@+id/ll_or"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/opensansregular"
+            android:gravity="center"
+
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dont"
+            app:layout_constraintWidth_percent="0.8">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:background="@color/white"></View>
+
+            <TextView
+                android:id="@+id/tv_or"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/or"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></TextView>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_fb"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/background_white_full_rounded"
+            android:elevation="2dp"
+            android:fontFamily="@font/opensansregular"
+            android:gravity="center"
+
+            android:orientation="horizontal"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="@id/ll_signup"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintTop_toBottomOf="@+id/ll_or"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/facebook"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/facebook"
+                android:textColor="#5D7096"
+                android:textSize="@dimen/nrmltextsize"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_google"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+
+            android:background="@drawable/background_white_full_rounded"
+            android:elevation="2dp"
+            android:fontFamily="@font/opensansregular"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:translationZ="2dp"
+            app:layout_constraintEnd_toEndOf="@id/ll_signup"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintTop_toBottomOf="@+id/ll_or"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/google"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/opensansregular"
+                android:text="@string/google"
+                android:textColor="#5D7096"
+                android:textSize="@dimen/nrmltextsize"></TextView>
+        </LinearLayout>
+      <!--  <com.facebook.login.widget.LoginButton
+            android:id="@+id/fb_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+</layout>

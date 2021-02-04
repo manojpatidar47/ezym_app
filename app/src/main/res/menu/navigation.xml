@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_people"
+        android:icon="@drawable/ring_icon"
+        android:title=""
+        />
+    <item
+        android:id="@+id/request"
+        android:icon="@drawable/ic_people_white_24dp"
+        android:title=""/>
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/ic_settings_24dp"
+        android:title=""/>
+
+
+
+</menu>

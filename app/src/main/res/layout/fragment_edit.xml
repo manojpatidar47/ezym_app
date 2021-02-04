@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgorund_login">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_20sdp"
+
+                tools:context=".ui.fragment.ProfileFragment">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.60"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/opensansemibold"
+                    android:text="Edit Profile"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile_img"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/changeimage"
+                    app:civ_border_color="#368DD5FA"
+                    app:civ_border_width="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_edit_profile">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+             <!--   <ProgressBar
+                    android:id="@+id/pb_progress"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+
+                    android:layout_marginTop="7dp"
+                    android:indeterminateDrawable="@drawable/progressbar_circular"
+                    android:visibility="gone"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_edit_profile"></ProgressBar>
+-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_profile_img">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/opensansregular"
+                        android:shadowColor="#C35F5F5F"
+                        android:shadowDy="10"
+                        android:text="Loading..."
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:translationZ="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_mymem"
+                    android:layout_width="0dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_header"
+                    app:layout_constraintWidth_percent="0.95">
+
+                    <LinearLayout
+                        android:id="@+id/main_rl_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/background_white_rounded"
+                        android:elevation="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/c_iv_first_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/user"
+                                android:visibility="gone" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/ti_first_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/c_iv_first_name"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintEnabled="true"
+
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_first_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Name"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/ic_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/mail_icon"
+                                android:visibility="gone" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/ic_email"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintEnabled="true"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_email"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:editable="false"
+                                    android:hint="Email"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/c_iv_phone"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/phone"
+                                android:visibility="gone" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/c_iv_phone"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintEnabled="true"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+
+                                    android:hint="Religion"
+                                    android:inputType="number"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ic_dateofbirth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/hastag"
+                                android:visibility="gone"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+
+                                android:layout_toRightOf="@+id/ic_dateofbirth"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_dateofbirth"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:hint="Date of Birth"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Gender"
+                                android:textColor="@color/hintcolor"></TextView>
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/rg_gender"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_male"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="Male"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/rb_female"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="FeMale"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/c_iv_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/hastag"
+                                android:visibility="gone"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/c_iv_address"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_height"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Height(in ft)"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Relationship status"
+                                android:textColor="@color/hintcolor"></TextView>
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/rg_maratial"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_married"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="Married"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/rb_unmarrid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="UnMarried"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/c_postal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:src="@drawable/hastag"
+                                android:visibility="gone"
+                                app:layout_constraintLeft_toLeftOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/c_postal"
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txt_city"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="City"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_state"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="State"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_counrty"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Country"
+                                    android:inputType="number"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_occupation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Occupation"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_profile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Profile"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_zodiac"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Zodiac"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_religion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Religion"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_cast"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Cast"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_mother_toung"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Mother Tongue"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_bloodgrup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Blood Group"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_familystatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Family Status"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_noofmember"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="No. of Family memmbers"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_physical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Physical status"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_complexion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Complexion"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Eating Habits"
+                                android:textColor="@color/hintcolor"></TextView>
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/rg_eating"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_etng_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="Yes"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/rb_etng_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="No"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Drinking Habits"
+                                android:textColor="@color/hintcolor"></TextView>
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/rg_drinking"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_drk_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="Yes"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/rb_drk_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="No"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Smoking Habits"
+                                android:textColor="@color/hintcolor"></TextView>
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/rg_smoking"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rb_sm_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="Yes"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/rb_sm_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_15sdp"
+                                    android:buttonTint="@color/hintcolor"
+                                    android:text="No"
+                                    android:textColor="@color/hintcolor"></RadioButton>
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_highestqua"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Highest Qualification"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_annualincome"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Annual Income"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_hobies"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Hobies"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                android:layout_centerVertical="true"
+
+                                android:orientation="vertical"
+                                android:textColorHint="@color/hintcolor"
+                                app:hintTextColor="@color/hintcolor">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_interests"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="Interest"
+                                    android:inputType="text"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:text="Loading..."
+                                    android:textColor="@color/hintcolor"
+                                    android:textColorHint="@color/hintcolor"
+                                    android:textSize="@dimen/nrmltextsize" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@color/view_grey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:elevation="@dimen/_5sdp"
+                            android:orientation="horizontal"
+
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_chnagepassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_lightblue_rounded"
+                                android:elevation="@dimen/_3sdp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="6dp"
+                                    android:text="Change Password"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/nrmltextsize" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/rl_update"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/background_red_rounded"
+                                android:elevation="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/opensansregular"
+                                    android:text="Update"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/nrmltextsize"></TextView>
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="7dp"
+                                    android:padding="2dp"
+                                    android:rotation="180"
+                                    android:src="@drawable/backarr"></ImageView>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintHeight_percent="0.45"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_choose"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+
+                android:background="#11000000"
+                app:behavior_hideable="true"
+                app:behavior_peekHeight="0dp"
+                app:layout_behavior="@string/bottom_sheet_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!--        app:layout_behavior="@string/bottom_sheet_behavior"-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/background_white_rounded_choose_photo"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:behavior_hideable="true"
+
+                    app:behavior_peekHeight="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <!--        app:layout_behavior="@string/bottom_sheet_behavior"-->
+
+                    <TextView
+                        android:id="@+id/tv_leave_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/Chooseprofiephoto"
+                        android:textColor="@color/text_grey"
+                        android:textSize="16dp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                    <View
+                        android:id="@+id/vi_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@color/view_grey"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_leave_group"></View>
+
+                    <TextView
+                        android:id="@+id/take_photo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/takefromcamara"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vi_1"
+                        app:layout_constraintWidth_percent=".8"></TextView>
+
+                    <View
+                        android:id="@+id/vi_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@color/view_grey"
+                        app:layout_constraintTop_toBottomOf="@+id/take_photo"></View>
+
+                    <TextView
+                        android:id="@+id/choose_galalry"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/Choosefromgallary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vi_2"
+                        app:layout_constraintWidth_percent=".8"></TextView>
+
+                    <View
+                        android:id="@+id/vi_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@color/view_grey"
+                        app:layout_constraintTop_toBottomOf="@+id/choose_galalry"></View>
+
+                    <TextView
+                        android:id="@+id/close_dia"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Close"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/vi_3"
+                        app:layout_constraintWidth_percent=".8"></TextView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
