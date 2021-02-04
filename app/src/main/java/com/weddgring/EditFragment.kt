@@ -78,6 +78,7 @@ class EditFragment(
     private var smoking_hab: kotlin.String? = "0"
     private var email: kotlin.String? = ""
     lateinit var sp_gender: Spinner
+    //new 
     private var file_send: File? = null
     var inte: Int? = null
     private var exifObject: ExifInterface? = null
